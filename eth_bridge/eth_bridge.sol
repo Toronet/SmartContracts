@@ -301,7 +301,7 @@ contract EthBridge {
                             ProposedRemoveOwners[addr].index = 2**256 - 1;
 
                             for (uint256 j = pending_ProposedRemoveOwners.length; j > 0; j--) {
-                                if (pending_ProposedRemoveOwners[j] == addr) {
+                                if (pending_ProposedRemoveOwners[j - 1] == addr) {
                                     pending_ProposedRemoveOwners[j - 1] = pending_ProposedRemoveOwners[pending_ProposedOwners.length - 1];
                                     ProposedRemoveOwners[pending_ProposedOwners[j - 1]].index = j - 1;
                                     pending_ProposedRemoveOwners.pop();
